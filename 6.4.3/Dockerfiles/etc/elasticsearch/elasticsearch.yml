@@ -35,6 +35,9 @@
 # Path to log files:
 #
 #path.logs: /path/to/logs
+path:
+  data: /usr/share/java/elasticsearch/data
+  logs: /usr/share/java/elasticsearch/logs
 #
 # ----------------------------------- Memory -----------------------------------
 #
@@ -53,6 +56,7 @@
 # Set the bind address to a specific IP (IPv4 or IPv6):
 #
 #network.host: 192.168.0.1
+network.host: 0.0.0.0
 #
 # Set a custom port for HTTP:
 #
@@ -69,7 +73,8 @@
 #
 # Prevent the "split brain" by configuring the majority of nodes (total number of master-eligible nodes / 2 + 1):
 #
-#discovery.zen.minimum_master_nodes: 
+#discovery.zen.minimum_master_nodes:
+discovery.zen.minimum_master_nodes: 1
 #
 # For more information, consult the zen discovery module documentation.
 #
