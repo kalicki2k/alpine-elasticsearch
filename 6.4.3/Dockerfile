@@ -18,7 +18,10 @@ USER elasticsearch
 
 WORKDIR /usr/share/java/elasticsearch
 
-EXPOSE 9200 9300
+ENV PATH /usr/share/java/elasticsearch/bin:$PATH
 
+VOLUME ["/usr/share/java/elasticsearch/data"]
+
+EXPOSE 9200 9300
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["/usr/share/java/elasticsearch/bin/elasticsearch"]
+CMD ["elasticsearch"]
